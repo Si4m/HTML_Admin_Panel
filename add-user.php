@@ -4,6 +4,26 @@ include_once "function.php";
 
    sidebar();
 
+  if(!empty($_POST)){
+    $name =$_POST['irfan_name'];
+    $phone =$_POST['irfan_phone'];
+    $email =$_POST['irfan_email'];
+    $username =$_POST['irfan_username'];
+    $pass =md5($_POST['irfan_pass']);
+
+
+    $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass)
+              VALUES ('$name','$phone','$email','$username','$pass')";
+
+
+      if(mysqli_query($conn,$insert)){
+        echo "User Registration Succesefull";
+      }
+
+  }
+
+
+
 
   ?>
 
@@ -21,7 +41,7 @@ include_once "function.php";
                     </div>
                     <div class="row">
                         <div class="col-md-12 ">
-                            <form method="" action="">
+                            <form method="post" action="">
                                 <div class="card mb-3">
                                   <div class="card-header">
                                     <div class="row">
@@ -37,31 +57,31 @@ include_once "function.php";
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Name<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="text" class="form-control form_control" id="" name="">
+                                          <input type="text" class="form-control form_control" id="" name="irfan_name">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Phone:</label>
                                         <div class="col-sm-7">
-                                          <input type="text" class="form-control form_control" id="" name="">
+                                          <input type="text" class="form-control form_control" id="" name="irfan_phone">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Email<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="email" class="form-control form_control" id="" name="">
+                                          <input type="email" class="form-control form_control" id="" name="irfan_email">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Username<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="text" class="form-control form_control" id="" name="">
+                                          <input type="text" class="form-control form_control" id="" name="irfan_username">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Password<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="password" class="form-control form_control" id="" name="">
+                                          <input type="password" class="form-control form_control" id="" name="irfan_pass">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
