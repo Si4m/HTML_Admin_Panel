@@ -22,7 +22,8 @@ include_once "function.php";
                     </div>
                     <div class="row">
                         <div class="col-md-12 welcome_part">
-                            <p><span>Welcome Md.</span> Irfan Uddin</p>
+                            <p><span style="color: blue;">Welcome ,</span>Md.Irfan Uddin</p>
+
                         </div>
                     </div>
                 </div>

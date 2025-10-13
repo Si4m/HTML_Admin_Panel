@@ -13,7 +13,8 @@ include_once "function.php";
                             <div class="bread">
                                 <ul>
                                     <li><a href=""><i class="fas fa-home"></i>Home</a></li>
-                                    <li><a href=""><i class="fas fa-angle-double-right"></i>Dashboard</a></li>                             
+                                    <li><a href=""><i class="fas fa-angle-double-right"></i>User</a></li>
+                                    <li><a href=""><i class="fas fa-angle-double-right"></i>Add User</a></li>                             
                                 </ul>
                             </div>
                         </div>

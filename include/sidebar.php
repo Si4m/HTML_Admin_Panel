@@ -10,10 +10,10 @@
                         <ul>
                             <li><a href="index.php"><i class="fas fa-home"></i> Dashboard</a></li>
                             <li><a href="all-user.php"><i class="fas fa-user-circle"></i> Users</a></li>
-                            <li><a href="#"><i class="fas fa-images"></i> Banner</a></li>
-                            <li><a href="#"><i class="fas fa-comments"></i> Contact Message</a></li>
-                            <li><a href="#"><i class="fas fa-globe"></i> Live Site</a></li>
-                            <li><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                            <li><a href="banner.php"><i class="fas fa-images"></i> Banner</a></li>
+                            <li><a href="contact_message.php"><i class="fas fa-comments"></i> Contact Message</a></li>
+                            <li><a href="live_site.php"><i class="fas fa-globe"></i> Live Site</a></li>
+                            <li><a href="login.php"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
                         </ul>
                     </div>
                 </div>
