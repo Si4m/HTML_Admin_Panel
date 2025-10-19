@@ -10,15 +10,23 @@ include_once "function.php";
     $email =$_POST['irfan_email'];
     $username =$_POST['irfan_username'];
     $pass =md5($_POST['irfan_pass']);
+    $cpass =md5($_POST['irfan_cpass']);
 
 
     $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass)
               VALUES ('$name','$phone','$email','$username','$pass')";
 
-
+    if($pass == $cpass){
       if(mysqli_query($conn,$insert)){
-        echo "User Registration Succesefull";
+        header("Location:all-user.php");
+      } else{
+        echo "Failed !Please Try Again.";
       }
+    }else{
+      echo " Confirm Password din not matched .";
+
+
+    }
 
   }
 
@@ -87,7 +95,7 @@ include_once "function.php";
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Confirm-Password<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="password" class="form-control form_control" id="" name="">
+                                          <input type="password" class="form-control form_control" id="" name="irfan_cpass">
                                         </div>
                                       </div>
                                       <div class="row mb-3">

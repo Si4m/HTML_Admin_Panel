@@ -44,28 +44,20 @@ include_once "function.php";
                                     </tr>
                                   </thead>
                                   <tbody>
+                                    <?php
+                                       $sel= "SELECT * FROM user";
+                                       $QR = mysqli_query($conn,$sel);
+
+                                       while($data= mysqli_fetch_array($QR)){
+                                  
+
+                                    ?>
+                                    
                                     <tr>
-                                      <td>Rasel Islam</td>
-                                      <td>01757220125</td>
-                                      <td>uylab.rasel@gmail.com</td>
-                                      <td>raseldevs</td>
-                                      <td>---</td>
-                                      <td>
-                                          <div class="btn-group btn_group_manage" role="group">
-                                            <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
-                                            <ul class="dropdown-menu">
-                                              <li><a class="dropdown-item" href="view-user.php">View</a></li>
-                                              <li><a class="dropdown-item" href="edit-user.php">Edit</a></li>
-                                              <li><a class="dropdown-item" href="#">Delete</a></li>
-                                            </ul>
-                                          </div>
-                                      </td>
-                                    </tr>
-                                    <tr>
-                                      <td>UYLAB</td>
-                                      <td>01958420252</td>
-                                      <td>uylab.contact@gmail.com</td>
-                                      <td>uylab</td>
+                                      <td> <?php echo $data['user_name'];  ?></td>
+                                      <td> <?php echo $data['user_phone'];  ?></td>
+                                      <td><?php echo $data['user_email'];  ?> </td>
+                                      <td> <?php echo $data['user_username'];  ?></td>
                                       <td>---</td>
                                       <td>
                                           <div class="btn-group btn_group_manage" role="group">
@@ -78,23 +70,9 @@ include_once "function.php";
                                           </div>
                                       </td>
                                     </tr>
-                                    <tr>
-                                      <td>Abir Mahmud</td>
-                                      <td>01711000000</td>
-                                      <td>uylab.abirmahamud@gmail.com</td>
-                                      <td>abir</td>
-                                      <td>---</td>
-                                      <td>
-                                          <div class="btn-group btn_group_manage" role="group">
-                                            <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
-                                            <ul class="dropdown-menu">
-                                              <li><a class="dropdown-item" href="#">View</a></li>
-                                              <li><a class="dropdown-item" href="#">Edit</a></li>
-                                              <li><a class="dropdown-item" href="#">Delete</a></li>
-                                            </ul>
-                                          </div>
-                                      </td>
-                                    </tr>
+                                    <?php
+                                       }
+                                       ?>
                                   </tbody>
                                 </table>
                               </div>
