@@ -35,6 +35,7 @@ include_once "function.php";
                                 <table class="table table-bordered table-striped table-hover custom_table">
                                   <thead class="table-dark">
                                     <tr>
+                                      <th>SL</th>
                                       <th>Name</th>
                                       <th>Phone</th>
                                       <th>Email</th>
@@ -45,15 +46,16 @@ include_once "function.php";
                                   </thead>
                                   <tbody>
                                     <?php
-                                       $sel= "SELECT * FROM user";
+                                       $sel= "SELECT * FROM user ORDER BY user_id DESC ";
                                        $QR = mysqli_query($conn,$sel);
-
+                                        $i=1;
                                        while($data= mysqli_fetch_array($QR)){
                                   
 
                                     ?>
                                     
                                     <tr>
+                                      <td> <?php echo $i++;  ?></td>
                                       <td> <?php echo $data['user_name'];  ?></td>
                                       <td> <?php echo $data['user_phone'];  ?></td>
                                       <td><?php echo $data['user_email'];  ?> </td>
@@ -70,9 +72,11 @@ include_once "function.php";
                                           </div>
                                       </td>
                                     </tr>
+                                    
                                     <?php
                                        }
                                        ?>
+
                                   </tbody>
                                 </table>
                               </div>
