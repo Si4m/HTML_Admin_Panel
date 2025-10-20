@@ -5,12 +5,12 @@ include_once "function.php";
    sidebar();
 
   if(!empty($_POST)){
-    $name =$_POST['irfan_name'];
-    $phone =$_POST['irfan_phone'];
-    $email =$_POST['irfan_email'];
-    $username =$_POST['irfan_username'];
-    $pass =md5($_POST['irfan_pass']);
-    $cpass =md5($_POST['irfan_cpass']);
+    $name =$_POST['test_name'];
+    $phone =$_POST['test_phone'];
+    $email =$_POST['test_email'];
+    $username =$_POST['test_username'];
+    $pass =md5($_POST['test_pass']);
+    $cpass =md5($_POST['test_cpass']);
 
 
     $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass)
@@ -65,37 +65,37 @@ include_once "function.php";
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Name<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="text" class="form-control form_control" id="" name="irfan_name">
+                                          <input type="text" class="form-control form_control" id="" name="test_name">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Phone:</label>
                                         <div class="col-sm-7">
-                                          <input type="text" class="form-control form_control" id="" name="irfan_phone">
+                                          <input type="text" class="form-control form_control" id="" name="test_phone">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Email<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="email" class="form-control form_control" id="" name="irfan_email">
+                                          <input type="email" class="form-control form_control" id="" name="test_email">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Username<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="text" class="form-control form_control" id="" name="irfan_username">
+                                          <input type="text" class="form-control form_control" id="" name="test_username">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Password<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="password" class="form-control form_control" id="" name="irfan_pass">
+                                          <input type="password" class="form-control form_control" id="" name="test_pass">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Confirm-Password<span class="req_star">*</span>:</label>
                                         <div class="col-sm-7">
-                                          <input type="password" class="form-control form_control" id="" name="irfan_cpass">
+                                          <input type="password" class="form-control form_control" id="" name="test_cpass">
                                         </div>
                                       </div>
                                       <div class="row mb-3">
