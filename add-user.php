@@ -23,7 +23,7 @@ include_once "function.php";
     if($pass == $cpass){
       if(mysqli_query($conn,$insert)){
 
-        move_uploaded_file($image['tmp_name'],'upload/' .$imageName);
+        move_uploaded_file($image['tmp_name'],'upload/'.$imageName);
         header("Location:all-user.php");
       } else{
         echo "Failed !Please Try Again.";
