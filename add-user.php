@@ -14,14 +14,16 @@ include_once "function.php";
     $image =$_FILES['test_img'];
 
 
-    $imageName = $name .rand(100000 ,99999)."_".time().pathinfo($image['name'],PATHINFO_EXTENSION);
+    $imageName = $name .rand(100000 ,99999)."_".time().".".pathinfo($image['name'],PATHINFO_EXTENSION);
 
 
     $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass,user_img)
-              VALUES ('$name','$phone','$email','$username','$pass','$name')";
+              VALUES ('$name','$phone','$email','$username','$pass','$imageName')";
 
     if($pass == $cpass){
       if(mysqli_query($conn,$insert)){
+
+        move_uploaded_file($image['tmp_name'],'upload/' .$imageName);
         header("Location:all-user.php");
       } else{
         echo "Failed !Please Try Again.";
