@@ -11,10 +11,14 @@ include_once "function.php";
     $username =$_POST['test_username'];
     $pass =md5($_POST['test_pass']);
     $cpass =md5($_POST['test_cpass']);
+    $image =$_FILES['test_img'];
 
 
-    $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass)
-              VALUES ('$name','$phone','$email','$username','$pass')";
+    $imageName = $name .rand(100000 ,99999)."_".time().pathinfo($image['name'],PATHINFO_EXTENSION);
+
+
+    $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass,user_img)
+              VALUES ('$name','$phone','$email','$username','$pass','$name')";
 
     if($pass == $cpass){
       if(mysqli_query($conn,$insert)){
@@ -49,7 +53,7 @@ include_once "function.php";
                     </div>
                     <div class="row">
                         <div class="col-md-12 ">
-                            <form method="post" action="">
+                            <form method="post" action="" enctype= "multipart/form-data" >
                                 <div class="card mb-3">
                                   <div class="card-header">
                                     <div class="row">
@@ -111,7 +115,7 @@ include_once "function.php";
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">Photo:</label>
                                         <div class="col-sm-4">
-                                          <input type="file" class="form-control form_control" id="" name="">
+                                          <input type="file" class="form-control form_control" id="" name="test_img">
                                         </div>
                                       </div>
                                   </div>
