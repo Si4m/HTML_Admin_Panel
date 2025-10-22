@@ -41,6 +41,7 @@ include_once "function.php";
                                       <th>Email</th>
                                       <th>Username</th>
                                       <th>Photo</th>
+                                      <th>Roll</th>
                                       <th>Manage</th>
                                     </tr>
                                   </thead>
@@ -60,7 +61,10 @@ include_once "function.php";
                                       <td> <?php echo $data['user_phone'];  ?></td>
                                       <td><?php echo $data['user_email'];  ?> </td>
                                       <td> <?php echo $data['user_username'];  ?></td>
-                                      <td> <img height="50" src="upload/<?php echo $data['user_img'];  ?>" alt=""></td>
+                                      <td> <img height="50" src="upload/<?php echo $data['user_img']; ?>" alt=""></td>
+                                      <td> ---</td>
+
+
                                       <td>
                                           <div class="btn-group btn_group_manage" role="group">
                                             <button type="button" class="btn btn-sm btn-dark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Manage</button>
