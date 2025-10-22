@@ -61,7 +61,21 @@ include_once "function.php";
                                       <td> <?php echo $data['user_phone'];  ?></td>
                                       <td><?php echo $data['user_email'];  ?> </td>
                                       <td> <?php echo $data['user_username'];  ?></td>
-                                      <td> <img height="50" src="upload/<?php echo $data['user_img']; ?>" alt=""></td>
+                                      <td>
+                                            <?php if($data['user_img'] !== ""){ ?>
+                                                    <img height="50" src="upload/<?php echo $data['user_img']; ?>" alt=""> 
+                                            <?php
+
+                                              }else{?>
+                                              <img height="50" src="upload/si.png" alt="">
+
+                                           
+                                         
+                                            <?php } ?>
+                                      
+                                     
+                                    
+                                        </td>
                                       <td> ---</td>
 
 
