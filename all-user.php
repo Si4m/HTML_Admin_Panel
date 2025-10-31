@@ -47,7 +47,7 @@ include_once "function.php";
                                   </thead>
                                   <tbody>
                                     <?php
-                                       $sel= "SELECT * FROM user ORDER BY user_id DESC ";
+                                       $sel= "SELECT * FROM user NATURAL JOIN role ORDER BY user_id DESC ";
                                        $QR = mysqli_query($conn,$sel);
                                         $i=1;
                                        while($data= mysqli_fetch_array($QR)){
@@ -72,11 +72,8 @@ include_once "function.php";
                                            
                                          
                                             <?php } ?>
-                                      
-                                     
-                                    
-                                        </td>
-                                      <td> ---</td>
+
+                                      <td> <?php echo $data['role_name'];  ?></td>
 
 
                                       <td>

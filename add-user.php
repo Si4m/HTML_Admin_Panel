@@ -11,14 +11,15 @@ include_once "function.php";
     $username =$_POST['test_username'];
     $pass =md5($_POST['test_pass']);
     $cpass =md5($_POST['test_cpass']);
+    $role =$_POST['role'];
     $image =$_FILES['test_img'];
 
 
     $imageName = $name .rand(100000 ,99999)."_".time().".".pathinfo($image['name'],PATHINFO_EXTENSION);
 
 
-    $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass,user_img)
-              VALUES ('$name','$phone','$email','$username','$pass','$imageName')";
+    $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass,role_id,user_img)
+              VALUES ('$name','$phone','$email','$username','$pass','$role','$imageName')";
 
     if($pass == $cpass){
       if(mysqli_query($conn,$insert)){
@@ -26,7 +27,7 @@ include_once "function.php";
         move_uploaded_file($image['tmp_name'],'upload/'.$imageName);
         header("Location:all-user.php");
       } else{
-        echo "Failed !Please Try Again.";
+        echo "Failed !Please Try Again." . mysqli_error($conn); 
       }
     }else{
       echo " Confirm Password din not matched .";
@@ -107,10 +108,17 @@ include_once "function.php";
                                       <div class="row mb-3">
                                         <label class="col-sm-3 col-form-label col_form_label">User Role<span class="req_star">*</span>:</label>
                                         <div class="col-sm-4">
-                                          <select class="form-control form_control" id="" name="">
+                                          <select class="form-control form_control" id="" name="role">
                                             <option>Select Role</option>
-                                            <option value="">Superadmin</option>
-                                            <option value="">Admin</option>
+                                            <?php
+                                                $selr = "SELECT * FROM role ORDER BY role_id ASC";
+                                                $qr = mysqli_query($conn, $selr);
+                                                while ($urole = mysqli_fetch_assoc($qr)) {
+                                                ?>
+                                             <option value="<?php echo $urole['role_id'] ?>"><?php echo $urole['role_name'] ?></option>
+                                                <?php
+                                                }
+                                                ?>
                                           </select>
                                         </div>
                                       </div>
