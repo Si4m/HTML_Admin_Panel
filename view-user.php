@@ -3,6 +3,12 @@ include_once "function.php";
   headers();
 
    sidebar();
+  $id=$_GET['v'];
+
+  $sel ="SELECT * FROM user NATURAL JOIN role WHERE user_id='$id' ";
+
+  $Q=mysqli_query($conn,$sel);
+  $data=mysqli_fetch_assoc($Q);
 
 
   ?>
@@ -40,33 +46,42 @@ include_once "function.php";
                                           <tr>
                                             <td>Name</td>  
                                             <td>:</td>  
-                                            <td>Rasel Islam</td>  
+                                            <td><?php echo $data['user_name'] ?></td>  
                                           </tr>
                                           <tr>
                                             <td>Phone</td>  
                                             <td>:</td>  
-                                            <td>01757220125</td>  
+                                            <td><?php echo $data['user_phone'] ?></td>  
                                           </tr>
                                           <tr>
                                             <td>Email</td>  
                                             <td>:</td>  
-                                            <td>uylab.rasel@gmail.com</td>  
+                                            <td><?php echo $data['user_email'] ?></td>  
                                           </tr>
                                           <tr>
                                             <td>Username</td>  
                                             <td>:</td>  
-                                            <td>raseldevs</td>  
+                                            <td><?php echo $data['user_username'] ?></td>  
                                           </tr>
                                           <tr>
                                             <td>Role</td>  
                                             <td>:</td>  
-                                            <td>---</td>  
+                                            <td><?php echo $data['role_name'] ?></td>  
                                           </tr>
                                           <tr>
                                             <td>Photo</td>  
                                             <td>:</td>  
                                             <td>
-                                                <img class="img200" src="images/avatar.jpg" alt=""/>  
+                                                <?php if($data['user_img'] !== ""){ ?>
+                                                    <img height="250" src="upload/<?php echo $data['user_img']; ?>" alt=""> 
+                                            <?php
+
+                                              }else{?>
+                                              <img height="250" src="upload/si.png" alt="">
+
+                                           
+                                         
+                                            <?php } ?>
                                             </td>  
                                           </tr>
                                         </table>

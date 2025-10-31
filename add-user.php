@@ -13,13 +13,14 @@ include_once "function.php";
     $cpass =md5($_POST['test_cpass']);
     $role =$_POST['role'];
     $image =$_FILES['test_img'];
+    $time = date("Y-m-d H:i:s");
 
 
     $imageName = $name .rand(100000 ,99999)."_".time().".".pathinfo($image['name'],PATHINFO_EXTENSION);
 
 
-    $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass,role_id,user_img)
-              VALUES ('$name','$phone','$email','$username','$pass','$role','$imageName')";
+    $insert ="INSERT INTO  user(user_name,user_phone,user_email,user_username,user_pass,role_id,user_img,creating_time)
+              VALUES ('$name','$phone','$email','$username','$pass','$role','$imageName','$time')";
 
     if($pass == $cpass){
       if(mysqli_query($conn,$insert)){
